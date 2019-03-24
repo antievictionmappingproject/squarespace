@@ -51,18 +51,7 @@
     <section class="sidebar">
       <span class="date"><time class="published" datetime="{addedOn|date %F}">{addedOn|date %A %m.%d.%y}</time></span>
       <address rel="author">{.section author}<span class="author">Posted by <a href="{collection.fullUrl}?author={author.id}">{displayName}</a></span>{.end}</address>
-      <div class="comments">
-        {.comments?}
-          {.if websiteSettings.disqusShortname}
-          {@|comment-link}
-          {.or}
-          {.section publicCommentCount}
-          Comments: <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">{@}</a>
-            {.or}
-            {.end}
-          {.end}
-        {.end}
-      </div>
+
       <div class="social-like">{@|like-button}
             {@|social-button-inline}</div>
 
@@ -136,11 +125,5 @@
     </nav>
   {.end}
 
-{.section item}
-  <!-- COMMENTS -->
-  <section class="comments-wrapper">
-    {@|comments}
-  </section>
-{.end}
 </div>
 </div>
