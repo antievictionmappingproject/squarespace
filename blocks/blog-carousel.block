@@ -1,0 +1,37 @@
+<div id="blogCarousel">
+  <div id="blogCarouselContainer" class="carousel slide" data-ride="carousel">
+    <ol class="blogCarouselIndicators carousel-indicators">
+      <li data-target="#blogCarouselContainer" data-slide-to="0" class="active"></li>
+      <li data-target="#blogCarouselContainer" data-slide-to="1"></li>
+      <li data-target="#blogCarouselContainer" data-slide-to="2"></li>
+    </ol>
+    <ul class="blogCarouselInner carousel-inner">
+      {.repeated section items}
+        {.starred?}
+          {.main-image?}
+            <li id="{id}" class="blogCarouselItem carousel-item {.equal? @index 1}active{.end}">
+              <img src="{assetUrl}" class="blogCarouselImage d-block w-100" />
+              <div class="blogCarouselCaption carousel-caption d-none d-md-block">
+                <h5 class="blogCarouselTitle">
+                  <a href="{fullUrl}">
+                    {title}
+                  </a>
+                </h5>
+                {.excerpt?}<p>{excerpt}</p>{.end}
+              </div>
+            </li>
+          {.end}
+        {.or}{.end}
+      {.end}
+    </ul>
+    <div class="sqs-gallery-controls w-100" href="#blogCarouselContainer" role="button" data-slide="prev">
+      <a href="#" class="previous"><span class="sr-only">Previous</span></a>
+    </div>
+    <div class="sqs-gallery-controls w-100" href="#blogCarouselContainer" role="button" data-slide="next">
+      <a href="#" class="next"><span class="sr-only">Next</span></a>
+    </div>
+
+  </div>
+
+
+</div>

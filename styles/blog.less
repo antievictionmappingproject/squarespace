@@ -1,6 +1,43 @@
 // Blog styling
 // Namespace with file's top-level id
 
+// #blogCarousel
+#blogCarouselContainer {
+  height: 300px;
+  position: relative;
+  .blogCarouselIndicators {
+    margin: 0;
+  }
+  .blogCarouselInner {
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .blogCarouselItem {
+    position: relative;
+    height: 100%;
+  }
+  .blogCarouselTitle {
+    display: inline-block;
+    margin: 0;
+    padding: 25px;
+  }
+  .blogCarouselCaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.75);
+    h5 a {
+      color: #FFFFFF;
+    }
+  }
+  .sr-only { display: none; }
+}
+
 #blogFilter {
   text-align: center;
   > ul.blogFilterMenus > li {

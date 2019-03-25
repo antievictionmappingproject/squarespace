@@ -1,3 +1,9 @@
+<div id="blogList-carousel">
+  <squarespace:query collection="blog" featured="true" limit="5">
+    {@|apply blog-carousel.block}
+  </squarespace:query>
+</div>
+
 <div id="blogList">
   {@|apply blog-filter.block}
 <div class="content">
