@@ -1,5 +1,5 @@
 <div id="blogList-carousel">
-  <squarespace:query collection="blog" featured="true" limit="5">
+  <squarespace:query collection="blog" featured="true" limit="3">
     {@|apply blog-carousel.block}
   </squarespace:query>
 </div>

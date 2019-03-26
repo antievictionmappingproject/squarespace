@@ -5,33 +5,84 @@
 #blogCarouselContainer {
   height: 300px;
   position: relative;
-  .blogCarouselIndicators {
-    margin: 0;
+  .carousel-indicators {
+    width: 100px;
+    margin: auto;
+    li {
+      height: 5px;
+      background-color: rgba(255, 255, 255, 0.5);
+      &.active { background-color: rgba(255, 255, 255, 1); }
+    }
   }
-  .blogCarouselInner {
+  .sqs-gallery-controls {
+    .previous, .next {
+      &, &:hover { background-color: transparent; }
+    }
+  }
+  .carousel-inner {
     position: absolute;
     height: 100%;
     margin: 0;
     padding: 0;
   }
-  .blogCarouselItem {
+  .carousel-item {
     position: relative;
     height: 100%;
   }
-  .blogCarouselTitle {
-    display: inline-block;
-    margin: 0;
-    padding: 25px;
-  }
-  .blogCarouselCaption {
+  a.blogCarouselLink {
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    &, &:visited, &:hover { border: 0; }
+    .blogCarouselScreen {
+      position: absolute;
+      z-index: 15;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,.75);
+      .transition(opacity 0.3s ease-out);
+      .gradient(@origin: top; @stops: rgba(0,0,0,0) 0, rgba(0,0,0,0) 150px, rgba(0,0,0,.5) 225px, rgba(0,0,0,.75) 275px; @fallback: rgba(0,0,0,.25););
+      // Fixes weird edge flicker on trasition in Chrome:
+      -webkit-backface-visibility: hidden;
+      width: 101%;
+    }
+    &:hover {
+      .blogCarouselScreen {
+        opacity: .25;
+      }
+      .carousel-caption {
+        background-color: rgba(0,0,0,.85);
+      }
+    }
+  }
+  .carousel-caption {
+    z-index: 20;
+    top: 42%;
+    bottom: 40%;
+    height: 50px;
+    right: 0;
+    left: 0;
     margin: 0;
     padding: 0;
-    width: 100%;
-    background-color: rgba(0,0,0,0.75);
-    h5 a {
+    .transition(all 0.3s ease-out);
+    background-color: rgba(0, 0, 0, .6);
+    h5 {
+      display: inline-block;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+    }
+    p {
+      padding: 0 20px;
       color: #FFFFFF;
     }
   }

@@ -1,5 +1,16 @@
 @white: #FFFFFF;
+@cyan: #06f9e0;
 @enable-gradients:          false;
+
+// Mixins
+.gradient (@origin: left, @fallback: @white, @stops){
+  background: -webkit-linear-gradient(@origin, @stops) @fallback no-repeat;
+  background:    -moz-linear-gradient(@origin, @stops) @fallback no-repeat;
+  background:     -ms-linear-gradient(@origin, @stops) @fallback no-repeat;
+  background:      -o-linear-gradient(@origin, @stops) @fallback no-repeat;
+  background:         linear-gradient(@origin, @stops) @fallback no-repeat;
+  background-color: @fallback;
+}
 
 // Carousel
 
