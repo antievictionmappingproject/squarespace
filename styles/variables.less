@@ -1,5 +1,7 @@
 @white: #FFFFFF;
 @cyan: #06f9e0;
+@gray: #d1cccc;
+@offblack: #1c1c1c;
 @enable-gradients:          false;
 
 // Mixins
@@ -246,4 +248,30 @@
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
+}
+
+
+// Screen reader
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  -webkit-clip-path: none;
+  clip-path: none;
 }
