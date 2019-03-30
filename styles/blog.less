@@ -37,7 +37,9 @@
   .carousel-item {
     position: relative;
     height: 100%;
+    overflow: hidden;
   }
+  .blogCarouselImage { width: 100%; }
   a.blogCarouselLink {
     position: absolute;
     left: 0;
@@ -69,10 +71,11 @@
     }
   }
   .carousel-caption {
+    position: relative;
     z-index: 20;
     top: 42%;
     bottom: 40%;
-    height: 50px;
+    height: auto;
     right: 0;
     left: 0;
     margin: 0;
@@ -93,6 +96,14 @@
     p {
       padding: 0 20px;
       color: @white;
+    }
+  }
+}
+@media @phone {
+  #blogCarouselContainer {
+    .blogCarouselImage {
+      width: auto;
+      height: 100%;
     }
   }
 }
@@ -242,5 +253,15 @@
         color:@textColor;
       }
     }
+  }
+}
+@media @tablet {
+  #blogList .content {
+    grid-template-columns: repeat(2, ~"1fr");
+  }
+}
+@media @phone {
+  #blogList .content {
+    grid-template-columns: repeat(1, ~"1fr");
   }
 }

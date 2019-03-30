@@ -1,8 +1,14 @@
+
+// Colors
 @white: #FFFFFF;
 @cyan: #06f9e0;
 @gray: #d1cccc;
 @offblack: #1c1c1c;
 @enable-gradients:          false;
+
+// Media Queries
+@tablet:  ~"only screen and (max-width: 960px)";
+@phone:   ~"only screen and (max-width: 640px)";
 
 // Mixins
 .gradient (@origin: left, @fallback: @white, @stops){
@@ -14,7 +20,7 @@
   background-color: @fallback;
 }
 
-// Carousel
+// Bootstrap Carousel
 
 @carousel-control-color:            @white;
 @carousel-control-width:            15%;
@@ -251,7 +257,7 @@
 }
 
 
-// Screen reader
+// Bootstrap Screen Reader
 .sr-only {
   position: absolute;
   width: 1px;

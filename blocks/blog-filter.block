@@ -20,7 +20,7 @@
       </ul>
     </li>
     <li tabindex="0">
-      <h3><a>Filter by category</a></h3>
+      <h3><a>Filter by location</a></h3>
       <ul>
         {.if categoryFilter}
           <li class="blogFilterItem active">{categoryFilter}</li>
@@ -37,7 +37,7 @@
         {.end}
       </ul>
     </li>
-    <li>
+    <li tabindex="0">
       <h3>
         <a href="{collection.urlId}">
           Clear filters

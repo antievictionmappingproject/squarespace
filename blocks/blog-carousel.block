@@ -8,10 +8,10 @@
     <ul class="carousel-inner">
       {.repeated section items}
         <li id="{id}" class="carousel-item {.equal? @index 1}active{.end}">
-          <img src="{assetUrl}" class="blogCarouselImage d-block w-100" />
+          <img src="{assetUrl}" class="blogCarouselImage d-block" />
           <a href="{fullUrl}" class="blogCarouselLink">
             <div class="blogCarouselScreen"></div>
-            <div class="carousel-caption d-none d-md-block"
+            <div class="carousel-caption d-md-block"
             {.excerpt?}style="top: 40%; height: 80px;"{.end}>
               <h5>
                 {title}
