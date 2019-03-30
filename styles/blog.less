@@ -6,8 +6,9 @@
 }
 
 // #blogCarousel
+@blogCarouselHeight: 300px;
 #blogCarouselContainer {
-  height: 300px;
+  height: @blogCarouselHeight;
   position: relative;
   .carousel-indicators {
     width: 100px;
@@ -20,6 +21,10 @@
   }
   .sqs-gallery-controls {
     .previous, .next {
+      margin-top: 0;
+      top: 0;
+      bottom: 0;
+      line-height: calc(@blogCarouselHeight - 25px);
       &, &:hover { background-color: transparent; }
     }
   }
@@ -87,7 +92,7 @@
     }
     p {
       padding: 0 20px;
-      color: #FFFFFF;
+      color: @white;
     }
   }
 }
