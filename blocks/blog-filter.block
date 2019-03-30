@@ -37,7 +37,7 @@
         {.end}
       </ul>
     </li>
-    <li tabindex="0">
+    <li class="blogFilterClear">
       <h3>
         <a href="{collection.urlId}">
           Clear filters
