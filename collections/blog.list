@@ -1,3 +1,11 @@
+{.if tagFilter}{.or}{.if categoryFilter}{.or}
+<div id="blogList-carousel">
+  <squarespace:query collection="blog" featured="true" limit="3">
+    {@|apply blog-carousel.block}
+  </squarespace:query>
+</div>
+{.end}{.end}
+
 <div id="blogList">
   {@|apply blog-filter.block}
 <div class="content">
