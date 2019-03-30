@@ -90,9 +90,7 @@
 <squarespace:script src="site.js" combo="true"/>
 <squarespace:script src="dynamic-data.js" combo="true"/>
 <squarespace:script src="lazy-loader.js" combo="true"/>
-<squarespace:script src="jquery-3.0.0.slim.min.js" combo="true"/>
-<squarespace:script src="util.js" combo="true"/>
-<squarespace:script src="carousel.js" combo="true"/>
+<squarespace:script src="jquery-bootstrap-carousel.min.js" combo="true"/>
 {squarespace-footers}
 {.if template.mobileStylesEnabled}{.or}
   <script>
