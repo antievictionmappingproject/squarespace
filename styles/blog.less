@@ -154,9 +154,10 @@
       position: relative;
       padding: 10px 0;
       &::after {
-        content: 'x';
+        content: '\00D7'; // multiplication sign x
         position: absolute;
         right: 10px;
+        font-size: 20px;
         color: @white;
       }
     }
