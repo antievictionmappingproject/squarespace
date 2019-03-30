@@ -106,6 +106,17 @@
     top: 0;
     vertical-align: top;
     > ul { display: none; }
+    &:not(:last-of-type):after { // triangle pointing right
+      content: '\00a0';
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid @white;
+    }
     &:hover, &:focus, &:active, &.active {
       h3 > a {
         color: @white;
@@ -123,6 +134,12 @@
         padding: 0;
         border: 1px solid @gray;
         border-top: 0;
+      }
+      &:not(:last-of-type):after { // triangle pointing down
+        border-top: 5px solid @white;
+        border-bottom: none;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
       }
     }
   }
