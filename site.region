@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-
+    <style>/* Prevent FOUC */html{visibility: hidden;opacity:0;}</style>
   {.if template.mobileStylesEnabled}
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   {.end}
@@ -90,6 +90,7 @@
 <squarespace:script src="site.js" combo="true"/>
 <squarespace:script src="dynamic-data.js" combo="true"/>
 <squarespace:script src="lazy-loader.js" combo="true"/>
+<squarespace:script src="jquery-bootstrap-carousel.min.js" combo="true"/>
 {squarespace-footers}
 {.if template.mobileStylesEnabled}{.or}
   <script>

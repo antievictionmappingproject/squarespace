@@ -50,21 +50,65 @@
 
     <section class="sidebar">
       <span class="date"><time class="published" datetime="{addedOn|date %F}">{addedOn|date %A %m.%d.%y}</time></span>
-      <address rel="author">{.section author}<span class="author">Posted by <a href="{collection.fullUrl}?author={author.id}">{displayName}</a></span>{.end}</address>
-      <div class="comments">
-        {.comments?}
-          {.if websiteSettings.disqusShortname}
-          {@|comment-link}
-          {.or}
-          {.section publicCommentCount}
-          Comments: <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">{@}</a>
-            {.or}
+      <div class="social-like">{@|like-button}
+            {@|social-button-inline}</div>
+
+      <div class="relatedPosts">
+        {.if categories}
+          <h4>Related Posts</h4>
+          <div class="relatedPosts-categories">
+            {.repeated section categories}
+              {.equal? @index 1}
+                <squarespace:query collection="blog" limit="10" category="{@}">
+                  <ul>
+                    {.repeated section items}
+                      <li id="{id}">
+                        <a href="{fullUrl}">{title}</a>
+                      </li>
+                      <script>
+                        {# remove related post if same as current post}
+                        var sameUrl = window.location.pathname.toString() === {fullUrl|json}.toString();
+                        if (sameUrl) {
+                          var postLi = document.getElementById("{id}");
+                          postLi.parentNode.removeChild(postLi);
+                        }
+                      </script>
+                    {.end}
+                  </ul>
+                </squarespace:query>
+              {.end}
             {.end}
+          </div>
+        {.or}
+          {.if tags}
+            <h4>Related Posts</h4>
+            <div class="relatedPosts-tags">
+              {.repeated section tags}
+                {.equal? @index 1}
+                  <squarespace:query collection="blog" limit="10" tag="{@}">
+                    <ul>
+                      {.repeated section items}
+                        <li id="{id}">
+                          <a href="{fullUrl}">{title}</a>
+                        </li>
+                        <script>
+                          {# remove related post if same as current post}
+                          var sameUrl = window.location.pathname.toString() === {fullUrl|json}.toString();
+                          if (sameUrl) {
+                            var postLi = document.getElementById("{id}");
+                            postLi.parentNode.removeChild(postLi);
+                          }
+                        </script>
+                      {.end}
+                    </ul>
+                  </squarespace:query>
+                {.end}
+              {.end}
+            </div>
           {.end}
         {.end}
       </div>
-      <div class="social-like">{@|like-button}
-            {@|social-button-inline}</div>
+
     </section>
 
   </article>
@@ -79,11 +123,5 @@
     </nav>
   {.end}
 
-{.section item}
-  <!-- COMMENTS -->
-  <section class="comments-wrapper">
-    {@|comments}
-  </section>
-{.end}
 </div>
 </div>
