@@ -1,7 +1,7 @@
-<nav id="blogFilter">
+<nav id="blogFilter"
+  {.if tagFilter}{.or}{.if categoryFilter}{.or}style="margin: 20px 0 10px;"{.end}{.end}>
   <squarespace:block-field id="blogSearchBlock" columns="12"/>
-  <ul class="blogFilterMenus"
-  {.if tagFilter}{.or}{.if categoryFilter}{.or}style="margin: 10px 0;"{.end}{.end}>
+  <ul class="blogFilterMenus">
     <li tabindex="0">
       <h3><a>Filter by topic</a></h3>
       <ul>
