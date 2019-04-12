@@ -113,9 +113,8 @@
 
 #blogFilter {
   text-align: center;
-  #blogSearchBlock .search-block {
-    padding-bottom: 0;
-  }
+  &.noFilter { margin: 20px 0 10px; }
+  #blogSearchBlock .search-block { padding-bottom: 0; }
   > ul.blogFilterMenus > li {
     display: inline-block;
     position: relative;
@@ -210,6 +209,7 @@
 }
 @media @phone {
   #blogFilter {
+    &.noFilter { margin-top: 0; }
     > ul.blogFilterMenus > li {
       display: block;
       text-align: left;
