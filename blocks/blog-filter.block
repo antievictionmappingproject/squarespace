@@ -1,4 +1,5 @@
 <nav id="blogFilter">
+  <squarespace:block-field id="blogSearchBlock" columns="12" lock-layout="false"/>
   <ul class="blogFilterMenus"
   {.if tagFilter}{.or}{.if categoryFilter}{.or}style="margin: 10px 0;"{.end}{.end}>
     <li tabindex="0">
