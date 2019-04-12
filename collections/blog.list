@@ -21,7 +21,7 @@
         {.if title}
         <h1 class="entry-title">
           {.passthrough?}
-            <a href="{sourceUrl}">{title} <span>&rarr;</span></a>
+            <a href="{sourceUrl}" target="_blank">{title} <span>&rarr;</span></a>
           {.or}
             <a href="{fullUrl}">{title}</a>
           {.end}
